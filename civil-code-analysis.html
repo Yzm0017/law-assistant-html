@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民法典第1064条与第1065条第3款竞合适用推理解析</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #ed8936;
+            --bg: #f7fafc;
+            --text: #2d3748;
+            --border: #e2e8f0;
+            --highlight: #fef3e2;
+            --code-bg: #2d3748;
+            --success: #276749;
+            --danger: #c53030;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 48px 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "⚖️";
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 80px;
+            opacity: 0.15;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .header .subtitle {
+            font-size: 15px;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+        .header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 16px;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tr:nth-child(even) td { background: #f8fafc; }
+        tr:hover td { background: #edf2f7; }
+
+        /* Flow chart */
+        .flow {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px 32px;
+            margin: 16px 0;
+            font-family: "SF Mono", "Consolas", monospace;
+            font-size: 13px;
+            line-height: 2.2;
+            overflow-x: auto;
+        }
+        .flow .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .flow .arrow { color: var(--accent); font-weight: bold; flex-shrink: 0; }
+        .flow .box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 14px;
+            flex: 1;
+        }
+        .flow .box.yes { border-left: 4px solid var(--success); }
+        .flow .box.no { border-left: 4px solid var(--danger); }
+        .flow .box.key { border-left: 4px solid var(--accent); background: var(--highlight); }
+
+        /* Note */
+        .note {
+            background: #ebf8ff;
+            border: 1px solid #90cdf4;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .note::before {
+            content: "💡 ";
+            font-size: 16px;
+        }
+
+        /* Alert box */
+        .alert {
+            background: var(--highlight);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+        .alert-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* Two column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .col {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+        .col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .col ul {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .col ul li { margin-bottom: 6px; }
+
+        /* Insight */
+        .insight {
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            color: white;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+        .insight-title {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+        .insight-content {
+            font-size: 15px;
+            line-height: 1.9;
+        }
+        .insight-content p { margin-bottom: 8px; }
+        .insight-content p:last-child { margin-bottom: 0; }
+
+        /* Tag */
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        /* Summary */
+        .summary-table td:nth-child(1) { font-weight: 600; color: var(--primary); width: 220px; }
+        .summary-table td:nth-child(2) { width: 100px; text-align: center; }
+        .summary-table td:nth-child(3) { font-size: 13px; color: #666; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        @media (max-width: 640px) {
+            .two-col { grid-template-columns: 1fr; }
+            .section { padding: 24px 20px; }
+            .header { padding: 32px 24px; }
+            .header h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>民法典第1064条与第1065条第3款竞合适用推理解析</h1>
+        <p class="subtitle">当夫妻共同债务认定（1064条）遇上约定财产制对外效力（1065条第三款），如何确定适用顺序与责任财产范围？本推理解析完整呈现北大法宝司法实践中的裁判逻辑。</p>
+        <span class="badge">🛡️ 法律实务 · 债务隔离 · 风险防范</span>
+    </div>
+
+    <!-- Part 1: Two Articles Distinct -->
+    <div class="section">
+        <div class="section-title">一、两条文的核心功能区分</div>
+        <p style="margin-bottom:16px;">在逻辑推演之前，必须先明确两个条文解决的是<strong style="color:var(--primary)">不同层次的问题</strong>：</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>条文</th>
+                    <th>解决的问题</th>
+                    <th>回答的问题</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>第1064条</strong></td>
+                    <td>债务<strong style="color:var(--accent)">性质</strong>认定</td>
+                    <td>这笔债务是不是夫妻共同债务？</td>
+                </tr>
+                <tr>
+                    <td><strong>第1065条第3款</strong></td>
+                    <td>责任<strong style="color:var(--accent)">财产范围</strong>划定</td>
+                    <td>债权人可以拿谁的财产来清偿？</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>关键原则：先认定性质，再确定责任财产，两步走、不倒置。</strong><br>
+            如果连"共同债务"都不是，第1065条第3款根本不会进入审查视野——这两步是有严格先后顺序的。
+        </div>
+    </div>
+
+    <!-- Part 2: Step by Step -->
+    <div class="section">
+        <div class="section-title">二、推理逻辑链：三步走</div>
+
+        <!-- Step 1 -->
+        <div style="margin-bottom:28px;">
+            <h3 style="font-size:15px;font-weight:700;color:var(--secondary);margin-bottom:12px;">
+                <span class="tag">第一步</span> &nbsp;定性优先（第1064条先适用）
+            </h3>
+            <p style="margin-bottom:12px;font-size:14px;">债权人向配偶主张债务，第一关是证明该债务属于夫妻共同债务，适用第1064条：</p>
+
+            <div class="flow">
+                <div class="step"><span class="arrow">→</span><div class="box key">债权人向配偶主张债务承担连带责任</div></div>
+                <div class="step"><span class="arrow">→</span><div class="box key">审查：债务是否符合第1064条共同债务构成要件？</div></div>
+                <div class="step"><span class="arrow">↓</span></div>
+                <div class="step"><span class="arrow">├</span><div class="box yes">
+                    <strong>情形①</strong> 共债共签 / 事后追认<br>
+                    <strong>情形②</strong> 家事代理债务（为家庭日常生活需要）<br>
+                    <strong>情形③</strong> 超额债务但债权人举证成功（用于共同生活/经营）
+                </div></div>
+                <div class="step"><span class="arrow">│</span><span style="color:var(--success);font-weight:bold;"> → 认定为共同债务，进入第二步</span></div>
+                <div class="step"><span class="arrow">├</span><div class="box no">
+                    <strong>情形④</strong> 超额债务且债权人<strong>无法证明</strong>用于共同生活/经营
+                </div></div>
+                <div class="step"><span class="arrow">│</span><span style="color:var(--danger);font-weight:bold;"> → 认定为个人债务，债权人败诉；第1065条第3款不适用</span></div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="margin-bottom:28px;">
+            <h3 style="font-size:15px;font-weight:700;color:var(--secondary);margin-bottom:12px;">
+                <span class="tag">第二步</span> &nbsp;区分适用场景
+            </h3>
+            <p style="margin-bottom:12px;font-size:14px;">通过第一步认定为共同债务后，才进入第二步——这笔共同债务，债权人可以向谁追索、以什么财产清偿？</p>
+
+            <div class="two-col">
+                <div class="col">
+                    <h4 style="border-color:var(--danger);">场景A：无约定财产制 / 债权人不知情</h4>
+                    <ul>
+                        <li>夫妻无法定财产制，或有约定但无法证明债权人知情</li>
+                        <li><strong>适用规则</strong>：共同债务 → 以<strong>夫妻共同财产 + 举债方个人财产</strong>清偿</li>
+                        <li>第1065条第3款条件未成就，不触发限制性适用</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4 style="border-color:var(--success);">场景B：有约定财产制 + 债权人知情</h4>
+                    <ul>
+                        <li>夫妻约定各自所有，且债权人知道该约定</li>
+                        <li><strong>触发</strong>：第1065条第3款限缩责任财产范围</li>
+                        <li>债权人仅能向举债方个人财产追索，配偶个人财产豁免</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div>
+            <h3 style="font-size:15px;font-weight:700;color:var(--secondary);margin-bottom:12px;">
+                <span class="tag">第三步</span> &nbsp;第1065条第3款的限缩逻辑
+            </h3>
+            <p style="margin-bottom:12px;font-size:14px;">第1065条第3款的功能是<strong style="color:var(--accent)">在认定为共同债务之后，限缩责任财产范围</strong>：</p>
+
+            <div class="flow">
+                <div class="step"><span class="arrow">→</span><div class="box key">第一步：认定为共同债务（1064条满足）</div></div>
+                <div class="step"><span class="arrow">→</span><div class="box key">夫妻约定财产归各自所有？</div></div>
+                <div class="step"><span class="arrow">→</span><div class="box key">债权人知道该约定？</div></div>
+                <div class="step"><span class="arrow">↓</span></div>
+                <div class="step"><span class="arrow">├</span><div class="box yes">
+                    <strong>是 → 第1065条第3款适用</strong><br>
+                    债权人只能向举债方个人财产追索<br>
+                    配偶个人财产豁免（但须举证"债权人知情"）
+                </div></div>
+                <div class="step"><span class="arrow">├</span><div class="box no">
+                    <strong>否 → 不触发第1065条第3款限制</strong><br>
+                    债权人可向夫妻共同财产 + 举债方个人财产追索<br>
+                    配偶以其在共同财产中的份额为限承担责任
+                </div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Part 3: Complete Flow -->
+    <div class="section">
+        <div class="section-title">三、完整逻辑流程图</div>
+
+        <div class="flow" style="font-size:12px;">
+            <div class="step"><span class="arrow">→</span><div class="box key" style="font-size:13px;font-weight:bold;">债权人向配偶主张债务</div></div>
+            <div class="step"><span class="arrow">↓</span></div>
+            <div class="step"><span class="arrow">→</span><div class="box key" style="font-size:13px;font-weight:bold;">【第一步】第1064条审查：债务是否为共同债务？</div></div>
+            <div class="step"><span class="arrow">↓</span></div>
+            <div class="step"><span class="arrow">├</span><div class="box no">
+                <strong>否（个人债务）</strong><br>→ 债权人败诉<br>→ 第1065条第3款完全不适用
+            </div></div>
+            <div class="step"><span class="arrow">│</span><span style="color:var(--success);font-weight:bold;"> 是（共同债务）</span></div>
+            <div class="step"><span class="arrow">│</span><span class="arrow">↓</span></div>
+            <div class="step"><span class="arrow">│</span><div class="box key" style="font-size:13px;font-weight:bold;">【第二步】第1065条第3款审查（此时才问：有无约定财产制？债权人是否知情？）</div></div>
+            <div class="step"><span class="arrow">│</span><span class="arrow">↓</span></div>
+            <div class="step"><span class="arrow">│</span><span class="arrow">├</span><div class="box yes" style="border-left-color:var(--success);">
+                <strong>有约定财产制 + 债权人知情</strong><br>
+                → 限缩：仅以举债方个人财产清偿<br>
+                → 配偶个人财产豁免
+            </div></div>
+            <div class="step"><span class="arrow">│</span><span class="arrow">├</span><div class="box no" style="border-left-color:var(--secondary);">
+                <strong>无约定 / 债权人不知情</strong><br>
+                → 不限缩：夫妻共同财产 + 举债方个人财产<br>
+                → 配偶以共同财产中其份额为限担责
+            </div></div>
+            <div class="step"><span class="arrow">│</span><span class="arrow">│</span><span style="color:#888;font-size:12px;">  ← 注意：债权人仍可绕回第一步反证</span></div>
+            <div class="step"><span class="arrow">│</span><span class="arrow">│</span><div class="box" style="border-left-color:#e53e3e;font-size:12px;background:#fff5f5;">
+                <strong>债权人可援引第1064条但书反击：</strong><br>
+                "债务用于夫妻共同生活、共同生产经营" → 重新认定为共债 → 第1065条第3款保护被架空
+            </div></div>
+        </div>
+
+        <div class="alert">
+            <div class="alert-title">⚠️ 绕过路径（最重要的实务知识点）</div>
+            即使触发了第1065条第3款（债权人知情+约定各自所有），债权人仍可以绕回来援引第1064条但书：<br>
+            <strong>债权人能够证明该债务用于夫妻共同生活、共同生产经营</strong> → 债务性质升级为共同债务 → 第1065条第3款的限缩失去正当性基础<br><br>
+            这就是(<strong>2019</strong>)最高法民申2302号确立的裁判规则：<strong>收益归家庭了，债务就是共债，第1065条第3款的保护就被架空。</strong>
+        </div>
+    </div>
+
+    <!-- Part 4: Nature of Conflict -->
+    <div class="section">
+        <div class="section-title">四、两条文竞合的本质</div>
+
+        <p style="margin-bottom:16px;">竞合发生于这个精确的切点：</p>
+        <div class="alert" style="background:#f0fff4;border-color:#68d391;">
+            <strong>债务被认定为共同债务</strong>（1064条满足）<br>
+            + <strong>夫妻约定了各自所有财产制</strong>（1065条第3款前提成立）<br>
+            + <strong>债权人知情</strong>（触发1065条第3款限制）<br><br>
+            三者同时满足时，两条款在逻辑上并行激活。
+        </div>
+
+        <p style="margin-bottom:12px;margin-top:20px;font-size:14px;">但它们<strong style="color:var(--primary)">并不冲突</strong>，因为作用于不同维度：</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>维度</th>
+                    <th>适用条文</th>
+                    <th>结论</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>债务性质</td>
+                    <td>第1064条</td>
+                    <td>认定为共同债务（成立连带责任）</td>
+                </tr>
+                <tr>
+                    <td>责任财产范围</td>
+                    <td>第1065条第3款</td>
+                    <td>限缩为举债方个人财产</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>换个角度理解：</strong><br>
+            第1065条第3款不是在否定第1064条的认定结果，而是在第1064条认定成立之后，对外部债权人可执行范围的<strong>限缩</strong>。两步是"定性→定量"的关系——先判断"是不是"，再判断"谁来承担、用什么承担"。
+        </div>
+    </div>
+
+    <!-- Part 5: Key Points -->
+    <div class="section">
+        <div class="section-title">五、关键司法适用要点</div>
+
+        <div style="margin-bottom:20px;">
+            <h3 style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:10px;">要点1：举证顺序不能倒置</h3>
+            <p style="font-size:14px;margin-bottom:10px;">债权人如果跳过第1064条直接主张"配偶应以其个人财产清偿"，法院会先审查债务性质。举债方配偶的抗辩也应按此顺序：</p>
+            <div class="flow" style="font-size:12px;">
+                <div class="step"><span class="arrow">①</span><div class="box no">否定"共同债务"性质 → 争第1064条适用（先抗辩债务本身）</div></div>
+                <div class="step"><span class="arrow">↓</span><span style="color:var(--danger);font-size:12px;">失败后</span></div>
+                <div class="step"><span class="arrow">②</span><div class="box">主张"债权人不知情" → 争第1065条第3款适用前提</div></div>
+            </div>
+            <p style="font-size:13px;color:#666;margin-top:8px;">这两步是递进关系，不是并列关系。实践中常见错误是把两步混在一起抗辩，导致重点不突出、举证不力。</p>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <h3 style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:10px;">要点2：第1065条第3款的但书——可被第1064条但书绕过</h3>
+            <p style="font-size:14px;">即便触发了第1065条第3款（债权人知情+约定各自所有），债权人仍可以<strong style="color:var(--accent)">绕回来</strong>援引第1064条但书：</p>
+            <div class="alert">
+                债权人能够证明该债务<strong>用于夫妻共同生活、共同生产经营</strong> → 债务性质升级为共同债务 → 第1065条第3款的限缩失去正当性基础
+            </div>
+        </div>
+
+        <div>
+            <h3 style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:10px;">要点3：最终责任财产格局汇总</h3>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>情形</th>
+                        <th>配偶承担？</th>
+                        <th>责任财产范围</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>共同债务 + 无约定/不知情</td>
+                        <td style="color:var(--danger);font-weight:bold;">✅ 承担</td>
+                        <td>夫妻共同财产 + 举债方个人财产</td>
+                    </tr>
+                    <tr>
+                        <td>共同债务 + 约定各自所有 + 知情</td>
+                        <td style="color:var(--success);font-weight:bold;">❌ 仅以共有份额为限</td>
+                        <td>以举债方个人财产为限，配偶个人财产豁免</td>
+                    </tr>
+                    <tr>
+                        <td>个人债务（第1064条但书不成立）</td>
+                        <td style="color:var(--success);font-weight:bold;">❌ 不承担</td>
+                        <td>无（债权人对配偶无请求权基础）</td>
+                    </tr>
+                    <tr>
+                        <td>共同债务 + 收益归家庭（共债成立）</td>
+                        <td style="color:var(--danger);font-weight:bold;">✅ 承担</td>
+                        <td>夫妻共同财产 + 举债方个人财产（第1065条第3款被架空）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Part 6: Insight -->
+    <div class="insight">
+        <div class="insight-title">★ Insight · 要点总结</div>
+        <div class="insight-content">
+            <p><strong>推理的底层逻辑：</strong>两条款是"定性→定量"的关系，先用1064判断"是不是共同债务"，再用1065(3)判断"谁来承担、用什么承担"——两步走、不倒置。</p>
+            <p><strong>竞合的触发条件：</strong>约定财产制+债权人知情+债务被认定为共同债务——三者同时满足时，两条款在逻辑上并行激活，此时第1065条第3款的限缩功能才真正发挥作用。</p>
+            <p><strong>绕过的路径：</strong>债权人只要能举证"债务用于共同生活/经营"，即可绕过第1065条第3款的保护，适用第1064条但书重新认定为共同债务——这是实务中最常见的攻击路线，也是(2019)最高法民申2302号确立的裁判规则。</p>
+        </div>
+    </div>
+
+    <!-- Part 7: Core Article Text -->
+    <div class="section">
+        <div class="section-title">六、现行有效法条原文</div>
+
+        <div style="margin-bottom:20px;">
+            <h3 style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:8px;">民法典第1064条（核心条款，2021年1月1日施行）</h3>
+            <div style="background:#f7fafc;border:1px solid var(--border);border-radius:8px;padding:16px 20px;font-size:14px;line-height:2;">
+                夫妻双方共同签名或者夫妻一方事后追认等共同意思表示所负的债务，以及夫妻一方在婚姻关系存续期间以个人名义为<strong style="color:var(--accent)">家庭日常生活需要</strong>所负的债务，属于夫妻共同债务。<br><br>
+                夫妻一方在婚姻关系存续期间以个人名义<strong style="color:var(--accent)">超出家庭日常生活需要</strong>所负的债务，不属于夫妻共同债务；但是，<strong style="color:var(--primary)">债权人能够证明该债务用于夫妻共同生活、共同生产经营或者基于夫妻双方共同意思表示的除外</strong>。
+            </div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+            <h3 style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:8px;">民法典第1065条第3款（约定财产制的对外效力）</h3>
+            <div style="background:#f7fafc;border:1px solid var(--border);border-radius:8px;padding:16px 20px;font-size:14px;line-height:2;">
+                夫妻对婚姻关系存续期间所得的财产约定归各自所有，夫或者妻一方对外所负的债务，<strong style="color:var(--accent)">相对人知道该约定的，以夫或者妻一方的个人财产清偿</strong>。<br><br>
+                <span style="font-size:12px;color:#666;">（举证责任：夫妻一方对此负有举证责任 — 婚姻家庭编解释一第37条）</span>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="font-size:14px;font-weight:700;color:var(--primary);margin-bottom:8px;">婚姻家庭编解释（一）第34-37条（2021年1月1日施行）</h3>
+            <div style="background:#f7fafc;border:1px solid var(--border);border-radius:8px;padding:16px 20px;font-size:13px;line-height:2.2;">
+                <strong>第34条</strong>（虚构债务、违法犯罪债务排除）<br>
+                夫妻一方与第三人串通，虚构债务，第三人主张该债务为夫妻共同债务的，人民法院不予支持。夫妻一方在从事赌博、吸毒等违法犯罪活动中所负债务，第三人主张该债务为夫妻共同债务的，人民法院不予支持。<br><br>
+                <strong>第35条</strong>（离婚判决不对抗债权人）<br>
+                当事人的离婚协议或者人民法院生效判决、裁定、调解书已经对夫妻财产分割问题作出处理的，<strong style="color:var(--accent)">债权人仍有权就夫妻共同债务向男女双方主张权利</strong>。一方就夫妻共同债务承担清偿责任后，主张由另一方按照离婚协议或者人民法院的法律文书承担相应债务的，人民法院应予支持。<br><br>
+                <strong>第36条</strong>（一方死亡时生存方责任）<br>
+                夫或者妻一方死亡的，<strong style="color:var(--accent)">生存一方应当对婚姻关系存续期间的夫妻共同债务承担清偿责任</strong>。<br><br>
+                <strong>第37条</strong>（知情举证责任）<br>
+                民法典第一千零六十五条第三款所称"相对人知道该约定的"，<strong style="color:var(--accent)">夫妻一方对此负有举证责任</strong>。
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        本页面内容基于北大法宝（pkulaw.com）法律数据库检索结果整理<br>
+        仅供法律实务参考，不构成正式法律意见
+    </div>
+
+</div>
+</body>
+</html>
