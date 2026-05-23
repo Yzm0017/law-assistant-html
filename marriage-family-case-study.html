@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>婚姻家庭法案例分析题：十步进阶考察</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #c05621;
+            --bg: #f7fafc;
+            --surface: #ffffff;
+            --text: #2d3748;
+            --border: #e2e8f0;
+            --success: #276749;
+            --danger: #c53030;
+            --warning: #b7791f;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 2;
+            font-size: 16px;
+        }
+
+        .container { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
+
+        .hero {
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            color: white;
+            padding: 48px 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .hero .subtitle {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .hero .meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .case-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .case-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .case-title::before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        .case-content {
+            font-size: 14px;
+            line-height: 2.2;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px 28px;
+        }
+        .case-content p { margin-bottom: 10px; }
+        .case-content p:last-child { margin-bottom: 0; }
+
+        .question {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border-left: 5px solid var(--secondary);
+            transition: border-left-color 0.2s;
+        }
+        .question:hover { border-left-color: var(--accent); }
+
+        .q-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .q-num {
+            background: var(--primary);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .q-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.5;
+        }
+        .q-desc {
+            font-size: 14px;
+            color: #4a5568;
+            margin-left: 44px;
+            margin-bottom: 14px;
+        }
+        .q-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-left: 44px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .tag-knowledge { background: #ebf8ff; color: #2b6cb0; border: 1px solid #90cdf4; }
+        .tag-difficulty { background: #fef3c7; color: #92400e; border: 1px solid #f6ad55; }
+
+        .divider {
+            border: none;
+            border-top: 1px dashed var(--border);
+            margin: 32px 0;
+        }
+
+        .answer-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-top: 40px;
+        }
+        .answer-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .answer-item {
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .answer-item-header {
+            background: var(--primary);
+            color: white;
+            padding: 14px 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .answer-item-body {
+            padding: 20px 24px;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .analysis-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 2;
+        }
+        .analysis-box strong { color: var(--primary); }
+        .key-point {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 32px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 20px 12px; }
+            .hero { padding: 32px 20px; }
+            .case-box, .question, .answer-section { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="hero">
+        <h1>婚姻家庭法综合案例分析题<br>十步进阶考察 · 重点难点全覆盖</h1>
+        <p class="subtitle">
+            本题以真实生活为原型，涵盖恋爱期间财产赠与、同居析产、彩礼返还、婚姻财产认定、房产分割、夫妻共同债务、股份分割、遗嘱继承等核心板块。通过逐步变换条件，考察民法典婚姻家庭编重点条文（第1063-1065条、第1068-1089条）及婚姻家庭编解释（一）（二）中的核心考点。适合法考备考、律师实务训练、法律硕士入学考试使用。
+        </p>
+        <div class="meta">
+            <span>📋 题数：10 小题</span>
+            <span>⏱ 预估时间：120 分钟</span>
+            <span>📊 难度：★★★★☆</span>
+        </div>
+        <span class="badge">🛡️ 民法典婚姻家庭编 · 重点难点全覆盖</span>
+    </div>
+
+    <!-- 案情 -->
+    <div class="case-box">
+        <div class="case-title">案情简介</div>
+        <div class="case-content">
+            <p><strong>张伟</strong>（男，36岁），系上海某科技公司创始人，持有公司60%股权，公司市场估值约6000万元。<strong>李婷</strong>（女，33岁），某会计师事务所注册会计师。2016年3月，二人经朋友介绍相识并确立恋爱关系，2017年5月张伟出资购买一辆<strong>宝马520轿车（总价52万元）</strong>登记在李婷名下，作为恋爱期间的"承诺礼物"。</p>
+
+            <p>2018年2月，张伟父母出资<strong>300万元</strong>作为首付，为张伟购买上海市浦东区某住宅（登记张伟单独所有，婚后还贷60万元均来自张伟经营公司的分红收益）。同年5月，张伟向李婷支付<strong>彩礼100万元</strong>，李婷将其中60万元用于购买婚宴家具、家电，40万元存入自己银行账户。双方于2018年10月举办婚礼，2019年1月登记结婚。</p>
+
+            <p>婚姻存续期间，2020年6月张伟以个人名义为科技公司贷款<strong>2000万元</strong>提供无限连带责任保证，贷款用于公司研发投入（公司盈利后曾为张伟分红80万元，用于家庭旅游和购车<strong>特斯拉 Model Y（登记张伟名下）</strong>）。2020年12月，李婷发现张伟与公司女员工存在不正当关系，双方开始分居。2021年3月张伟向法院起诉离婚，李婷同意离婚但主张多项财产权利。</p>
+
+            <p>双方另有以下争议事项：①李婷婚前个人银行账户有存款<strong>120万元</strong>，婚后将其中80万元用于张伟公司的验资，剩余40万元与婚后收入混同用于家庭开支；②张伟曾单独出资<strong>150万元</strong>为弟弟购房，声称该款项为借款；③张伟父亲2020年8月去世，留有遗嘱载明其名下所有财产由张伟独自继承（父亲遗产约<strong>500万元</strong>）；④双方婚后购置上海市静安区某商铺，登记为共同共有，首付款400万元来自张伟公司账户，贷款600万元由双方共同偿还。</p>
+
+            <p>2021年8月，法院判决双方离婚，但对上述财产及债务未作处理，须另行解决。</p>
+        </div>
+    </div>
+
+    <!-- 题目 -->
+    <div class="case-box">
+        <div class="case-title">十道进阶小题</div>
+
+        <!-- Q1 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">1</div>
+                <div class="q-title">张伟可要求李婷返还宝马520轿车吗？为什么？</div>
+            </div>
+            <div class="q-desc">背景：双方恋爱期间，张伟支付52万元购买宝马520并登记在李婷名下。结婚不成后张伟要求返还。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">恋爱期间赠与</span>
+                <span class="tag tag-knowledge">附条件赠与</span>
+                <span class="tag tag-difficulty">★★★★☆</span>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">2</div>
+                <div class="q-title">100万元彩礼应否返还？如应返还，应返还多少？</div>
+            </div>
+            <div class="q-desc">背景：李婷收取彩礼100万元，已花费60万元购置婚宴家具家电，40万元存入个人账户。双方已举办婚礼并共同生活两个月，但未登记结婚。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">彩礼返还</span>
+                <span class="tag tag-knowledge">民法典第5条</span>
+                <span class="tag tag-difficulty">★★★★☆</span>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">3</div>
+                <div class="q-title">上海浦东区房产应如何认定？应如何分割？</div>
+            </div>
+            <div class="q-desc">背景：首付300万元由张伟父母出资，登记张伟单独所有，婚后60万元还贷来自张伟公司分红。双方婚后共同还贷2年，已偿还本金约18万元。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">父母出资购房</span>
+                <span class="tag tag-knowledge">婚后还贷认定</span>
+                <span class="tag tag-difficulty">★★★★★</span>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">4</div>
+                <div class="q-title">李婷婚前账户中80万元用于验资、40万元与婚后收入混同，应如何处理？</div>
+            </div>
+            <div class="q-desc">背景：李婷婚前有存款120万元，其中80万元婚后流入张伟公司用于验资，40万元与婚后收入混同用于家庭日常开支。李婷主张80万元及对应公司股份应予返还。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">婚前财产混同</span>
+                <span class="tag tag-knowledge">婚后财产认定</span>
+                <span class="tag tag-difficulty">★★★★☆</span>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">5</div>
+                <div class="q-title">张伟为科技公司2000万元贷款提供的个人保证，是否属于夫妻共同债务？</div>
+            </div>
+            <div class="q-desc">背景：张伟以个人名义为公司2000万元贷款提供连带保证，贷款用于公司研发，公司盈利后张伟获得分红80万元用于家庭共同生活。李婷未在保证合同上签字，事先不知情。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">夫妻共同债务</span>
+                <span class="tag tag-knowledge">民法典第1064条</span>
+                <span class="tag tag-difficulty">★★★★★</span>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">6</div>
+                <div class="q-title">张伟为弟弟购房出资150万元，是夫妻共同财产还是借款？应如何处理？</div>
+            </div>
+            <div class="q-desc">背景：张伟婚后单独出资150万元为弟弟购房，声称是借款（非赠与），无书面借据，弟弟也未出具借条。李婷主张该款项为擅自处分夫妻共同财产。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">夫妻财产平等处理权</span>
+                <span class="tag tag-knowledge">大额财产处分</span>
+                <span class="tag tag-difficulty">★★★★☆</span>
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">7</div>
+                <div class="q-title">张伟父亲遗嘱载明全部财产由张伟独自继承，该继承所得是否为夫妻共同财产？</div>
+            </div>
+            <div class="q-desc">背景：张伟父亲2020年8月去世，遗嘱载明"所有财产由张伟独自继承，与李婷无关"。当时张伟与李婷尚在婚姻关系存续中，遗产价值约500万元。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">遗嘱继承</span>
+                <span class="tag tag-knowledge">夫妻共同财产认定</span>
+                <span class="tag tag-difficulty">★★★★☆</span>
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">8</div>
+                <div class="q-title">上海静安区商铺应如何分割？</div>
+            </div>
+            <div class="q-desc">背景：商铺登记为共同共有，首付款400万元来自张伟公司账户（张伟主张为其个人公司收入），贷款600万元由双方共同偿还（每月还款约2.5万元，从双方工资收入偿还）。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">夫妻共同财产分割</span>
+                <span class="tag tag-knowledge">贡献比例认定</span>
+                <span class="tag tag-difficulty">★★★★★</span>
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">9</div>
+                <div class="q-title">特斯拉 Model Y 应如何分割？</div>
+            </div>
+            <div class="q-desc">背景：该车购买于婚姻关系存续期间，价格45万元，登记在张伟名下，资金来源为张伟公司分红80万元（属于婚后公司盈利分红）。李婷主张该车属于夫妻共同财产，应分割。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">婚后财产认定</span>
+                <span class="tag tag-knowledge">生产、经营收益</span>
+                <span class="tag tag-difficulty">★★★☆☆</span>
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question">
+            <div class="q-header">
+                <div class="q-num">10</div>
+                <div class="q-title">如果张伟、李婷在婚前签订了《婚前财产协议》约定各自财产归各自所有，李婷的上述权利主张是否受影响？</div>
+            </div>
+            <div class="q-desc">背景：双方婚前签订书面财产协议，约定婚后各自所得财产归各自所有，债务各自承担。但张伟在签订协议时未告知李婷公司有这笔2000万元贷款保证债务。</div>
+            <div class="q-tags">
+                <span class="tag tag-knowledge">婚前财产协议</span>
+                <span class="tag tag-knowledge">民法典第1065条</span>
+                <span class="tag tag-knowledge">债权人撤销权</span>
+                <span class="tag tag-difficulty">★★★★★</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 答案 -->
+    <div class="answer-section">
+        <div class="answer-title">参考答案与解析</div>
+
+        <!-- A1 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第1题：宝马520轿车能否要求返还？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：张伟不能要求返还车辆（已登记为李婷名下）。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① 恋爱期间的购车行为，在民法上属于<strong>赠与合同</strong>（第657条）。赠与物权利转移后，赠与人原则上不能要求返还。<br>
+                    ② 车辆登记在李婷名下，物权已发生变动效力（物权公示原则）。<br>
+                    ③ 张伟虽主张是"承诺礼物"，但未约定结婚为赠与的解除条件，不构成<strong>附条件的赠与</strong>。<br>
+                    ④ 若张伟能证明赠与的初衷是"以结婚为前提"，可主张<strong>撤销赠与</strong>（第663条：受赠人严重侵害赠与人或其近亲属合法权益、或不履行扶养义务），但本案中李婷无过错。<br>
+                    ⑤ 实践中，法院倾向于：恋爱期间大额赠与（如车辆、房产），若无明确约定，一般认定为无条件赠与，不因结婚未成而撤销。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第657、663条 · 物权公示原则</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A2 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第2题：彩礼100万元应否返还？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：应部分返还。参考答案为返还约40万元（已消费60万元不予返还）。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① 《民法典》第5条（等价有偿原则）及婚姻家庭编解释（一）第5条规定：<br>
+                    <strong>应返还彩礼的情形：</strong>双方未办理结婚登记手续；双方办理结婚登记手续但确未共同生活；婚前给付并导致给付人生活困难。<br>
+                    ② <strong>已共同生活两个月</strong>，虽未登记结婚，但法院通常认为彩礼应适当返还而非全额返还。<br>
+                    ③ 已花费60万元购置婚宴家具家电——该财产已与李婷原有的其他财产混同或消耗，通常<strong>不予返还</strong>，但李婷可主张这部分是嫁妆性质。<br>
+                    ④ 40万元存款在李婷账户中，应结合其用途：如未用于婚后共同生活，可认定为彩礼剩余部分，应予<strong>适当返还</strong>（约20-40万元）。<br>
+                    ⑤ 司法实践中，存在"举办婚礼+共同生活"情节时，彩礼返还比例通常在30%-60%之间。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第5条 · 婚姻家庭编解释（一）第5条</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A3 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第3题：上海浦东区房产如何认定与分割？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：认定为张伟个人财产（首付），婚后还贷及对应增值部分为夫妻共同财产，应补偿李婷约19万元。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>父母出资购房</strong>：婚姻家庭编解释（一）第29条规定，父母出资购买的不动产，离婚时应综合考虑出资来源、婚姻存续时间、还贷情况等因素确定归属。本案中首付300万元来自张伟父母，认定为张伟个人财产。<br>
+                    ② <strong>婚后还贷</strong>：婚后还贷60万元来自张伟公司分红，属于张伟的经营所得而非李婷收入。虽张伟主张还贷来源为其个人公司收入，但公司盈利发生在婚内，<strong>公司分红属于夫妻共同财产</strong>（第1062条：生产、经营、投资的收益）。<br>
+                    ③ 因此，婚后还贷部分及对应的房产增值部分应认定为<strong>夫妻共同财产</strong>，各半分割。<br>
+                    ④ 婚后共同还贷18万元本金，对应房产增值（假设增值至900万元），李婷可获得补偿款约：<strong>（18万÷2 + 增值补偿）≈ 19万元</strong>。<br>
+                    ⑤ 房产登记在张伟名下，归属张伟，张伟向李婷支付折价款。
+                    <br><br>
+                    <span class="key-point">关键法条：婚姻家庭编解释（一）第29条 · 民法典第1062条 · 婚后还贷及增值分割规则</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A4 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第4题：李婷婚前存款80万元验资、40万元混同，如何处理？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：80万元已转化为公司资本，不属于李婷个人财产，但可主张投资收益补偿；40万元无法证明，不予支持。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>婚前财产混同</strong>：民法典第1063条规定，一方婚前财产为个人财产，但"其他应当归一方的财产"须明确归一方所有。婚前存款婚后混同使用，若无法区分，一般推定为夫妻共同财产（第1062条婚后所得共同制）。<br>
+                    ② <strong>80万元流入张伟公司验资</strong>：该款项已转化为公司注册资本，脱离李婷个人控制。此时李婷不再拥有对该80万元的所有权，但其作为验资投入的来源，可主张：<br>
+                    &nbsp;&nbsp;- 若公司分红，李婷有权主张其对应的投资收益；<br>
+                    &nbsp;&nbsp;- 若李婷能够证明验资款为其个人财产，可主张返还80万元（但需通过<strong>退股或减资</strong>程序）。<br>
+                    ③ <strong>40万元与婚后收入混同</strong>：李婷无法证明该40万元独立存在，实践中通常推定为已消耗或转化为夫妻共同财产，不再单独分割。<br>
+                    ④ 张伟公司属于张伟控制的公司，李婷如主张返还或分割公司股份，须通过<strong>公司僵局解决</strong>或另案处理，不宜在离婚财产纠纷中直接裁判。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第1062、1063条 · 婚前财产混同认定规则</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A5 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第5题：2000万元保证债务是否为夫妻共同债务？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：不属于夫妻共同债务，李婷不承担连带清偿责任，但应以张伟个人财产承担保证责任。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>适用民法典第1064条</strong>：夫妻一方在婚姻关系存续期间以个人名义超出家庭日常生活需要所负的债务，原则上不属于夫妻共同债务。<br>
+                    ② <strong>李婷未签字</strong>：不符合"共债共签"要件，张伟也未事后追认。<br>
+                    ③ <strong>贷款用于公司研发</strong>：虽公司盈利后分红80万元用于家庭，但这属于公司盈利的溢出收益，不等于"债务用于共同生活"。债务的原始用途是公司经营，而非家庭生活。<br>
+                    ④ <strong>举证责任</strong>：债权人须证明该债务用于夫妻共同生活或共同生产经营——本案债权人无法证明这一点。<br>
+                    ⑤ 但需要注意：<strong>经营收益用于家庭</strong>可能会被部分法院认定为"实际用于共同生活"的关联，但保证债务本身不是生产性投入，不能直接适用婚姻家庭编解释（二）第3条撤销权。<br>
+                    ⑥ 本案同时涉及：若张伟公司进入破产清算程序，保证债务可能被认定为张伟个人债务，但不能追加李婷。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第1064条 · "共债共签"原则 · 超出家庭日常生活认定规则</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A6 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第6题：为弟弟购房出资150万元是夫妻共同财产还是借款？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：应认定为赠与，150万元属于擅自处分夫妻共同财产，李婷有权要求张伟赔偿75万元。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>夫妻财产平等处理权</strong>：民法典第1062条规定夫妻对共同财产有平等处理权。重大财产处分须经双方协商一致（第1057条）。<br>
+                    ② <strong>150万元属于大额处分</strong>：为他人购房出资150万元，显然超出"家庭日常生活需要"范围，属于重大财产处分行为。<br>
+                    ③ <strong>赠与 vs 借款</strong>：张伟主张是借款，但无书面借据、无转账备注、无弟弟还款记录，证据不足。根据"谁主张谁举证"原则，应认定为<strong>赠与</strong>而非借款。<br>
+                    ④ 私自将夫妻共同财产赠与近亲属，属于<strong>损害配偶财产权益</strong>的行为。配偶有权主张赔偿，赔偿范围为损失的一半（75万元），即对应其在该150万元中应有的份额。<br>
+                    ⑤ 债权人（弟弟或张伟）可在离婚后向张伟追偿，但李婷不对此承担连带责任。<br>
+                    ⑥ 此外，如债权人主张，此赠与还可能涉及<strong>债权人撤销权</strong>（民法典第538条）——但在本案中债权人是谁并不明确。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第1057条 · 夫妻财产平等处理权 · 重大财产处分规则</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A7 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第7题：遗嘱继承所得是否为夫妻共同财产？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：500万元属于张伟个人财产，李婷无权主张分割。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>遗嘱继承的财产归属</strong>：民法典第1063条规定，遗嘱或赠与合同中确定只归夫或妻一方的财产，为夫妻一方的个人财产。<br>
+                    ② 张伟父亲遗嘱明确载明"所有财产由张伟独自继承，与李婷无关"——这是<strong>遗嘱中对受赠人的单独指定</strong>，符合第1063条第（三）项"遗嘱或赠与合同中确定只归夫或妻一方的财产"情形。<br>
+                    ③ 遗嘱指定"由张伟独自继承"，属于<strong>排除配偶共有权益的明确意思表示</strong>，李婷无法主张按夫妻共同财产分割。<br>
+                    ④ 婚姻家庭编解释（一）第31条进一步确认：夫妻一方财产不因婚姻延续而转化为夫妻共同财产（除非另有约定）。<br>
+                    ⑤ 但需要注意：<strong>婚姻存续期间</strong>内，如果张伟继承遗产后，将该财产与李婷共同使用或投入家庭生活，可能引发"财产混同"的争议——但本案中遗产刚刚继承，尚未混同。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第1063条第（三）项 · 婚姻家庭编解释（一）第31条 · 遗嘱指定单独继承</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A8 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第8题：上海静安区商铺如何分割？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：登记为共同共有，原则上各半分割；首付款来源认定为张伟个人财产贡献，贷款部分为共同贡献，应综合调整分割比例。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>登记为共同共有</strong>：根据不动产登记公示效力，商铺属于张伟、李婷共同共有（第297条共有制度）。<br>
+                    ② <strong>首付款400万元来自张伟公司</strong>：张伟主张为其个人公司收入，需证明该公司资产与其个人财产严格区分。若公司人格独立（有限公司），则公司账户转出的400万元属于公司资产，不能直接等同于张伟个人财产，法院可能<strong>不认可</strong>此主张。<br>
+                    ③ <strong>婚后共同还贷600万元</strong>：从双方工资收入中偿还，每月2.5万元，共还款约2年（60万元/月×24=60万元？——题目中600万应为贷款总额）。该还款来源为婚后共同收入，属于夫妻共同财产贡献。<br>
+                    ④ 综合分割方案：<br>
+                    &nbsp;&nbsp;- 商铺评估价值（假设为1100万元）减去未还贷款600万元，净值为500万元；<br>
+                    &nbsp;&nbsp;- 由于登记为共同共有，且双方共同还贷，应首先对半分割（各250万元净值）；<br>
+                    &nbsp;&nbsp;- 若张伟能充分证明首付款来自其公司独立资产，可适当调整分割比例（如张伟55%、李婷45%）。<br>
+                    ⑤ 法院通常会考虑：贡献比例、有无过错（张伟出轨）、婚龄长短，酌情调整。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第297条 · 第1055条夫妻约定财产 · 共同共有分割规则</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A9 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第9题：特斯拉 Model Y 如何分割？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：认定为夫妻共同财产，应各半分割，李婷获得约22.5万元折价补偿。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>购买时间</strong>：婚姻关系存续期间（2020年）。<br>
+                    ② <strong>资金来源</strong>：张伟公司分红80万元 → 分红属于"生产、经营、投资收益"（民法典第1062条第2项），属于<strong>夫妻共同财产</strong>，无论登记在谁名下。<br>
+                    ③ <strong>登记在张伟名下</strong>：不能以此否定李婷的共有权益。夫妻共同财产不因登记在一方名下而改变共有性质。<br>
+                    ④ <strong>分割方式</strong>：车辆现值（假设45万元）减去已折旧（约5万元），净值约40万元。各半分割，李婷获得约20万元折价款，或双方协商由张伟取得车辆、张伟向李婷支付补偿。<br>
+                    ⑤ 若张伟主张车辆主要用于其个人通勤而非家庭共同使用，法院一般仍按共同财产处理——家庭使用不是认定共同财产的必要条件。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第1062条第2项 · 婚后生产收益认定为共同财产 · 登记公示不影响共有性质</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- A10 -->
+        <div class="answer-item">
+            <div class="answer-item-header">第10题：婚前财产协议约定各自所有，是否影响李婷的权利主张？</div>
+            <div class="answer-item-body">
+                <p><strong>结论：婚前财产协议仅约束夫妻内部关系，不能对抗第三人（债权人）；李婷的部分权利主张仍可成立，但会受财产约定影响。</strong></p>
+                <div class="analysis-box">
+                    <strong>法律分析：</strong><br>
+                    ① <strong>民法典第1065条</strong>：男女双方可以约定婚姻关系存续期间所得的财产归各自所有。该约定对双方具有法律约束力（对内效力）。<br>
+                    ② <strong>对外效力限制</strong>（第1065条第3款）：夫妻约定各自所有，夫或妻一方对外所负的债务，<strong>相对人知道该约定的，以夫或妻一方的个人财产清偿</strong>——即债权人知情是前提。<br>
+                    ③ <strong>对李婷主张的影响</strong>：<br>
+                    &nbsp;&nbsp;- 浦东房产（第3题）：若约定各自所有，该房产本来就属张伟，李婷无权主张——但婚后还贷及对应增值仍可主张分割（还贷来源为分红，属于各自所有下的个人财产？此处有争议）。<br>
+                    &nbsp;&nbsp;- 2000万保证债务：张伟签保证时未告知李婷，李婷不知情——债务为张伟个人债务，与李婷无关。<br>
+                    &nbsp;&nbsp;- 张伟为弟弟购房150万：李婷仍可主张该行为侵害其财产权益，因为财产约定不能免除夫妻间的忠诚义务和财产保护义务。<br>
+                    ④ <strong>张伟隐瞒债务的风险</strong>：张伟在签订婚前协议时未告知李婷公司有保证债务，若该债务导致李婷受损，李婷可主张<strong>撤销婚前财产协议</strong>（欺诈/重大误解）。<br>
+                    ⑤ <strong>债权人撤销权</strong>：若张伟将大量财产"约定"为自己的个人财产以规避债权人，债权人可依据民法典第538条行使撤销权。
+                    <br><br>
+                    <span class="key-point">关键法条：民法典第1065条 · 对内效力与对外效力区分 · 债权人撤销权（第538条）</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 考点覆盖 -->
+    <div class="answer-section">
+        <div class="answer-title">考点覆盖总览</div>
+        <div class="analysis-box">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <thead>
+                    <tr style="background:#1a365d;color:white;">
+                        <th style="padding:10px 12px;text-align:left;">题号</th>
+                        <th style="padding:10px 12px;text-align:left;">核心知识点</th>
+                        <th style="padding:10px 12px;text-align:left;">涉及法条</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size:13px;">
+                    <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q1</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">恋爱期间大额赠与 · 附条件赠与 · 物权公示</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第657、663条</td></tr>
+                    <tr style="background:#f8fafc;"><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q2</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">彩礼返还条件 · 已消耗财产的返还计算</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第5条 · 婚姻家庭编解释（一）第5条</td></tr>
+                    <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q3</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">父母出资购房 · 婚后还贷认定 · 增值分割</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">婚姻家庭编解释（一）第29条 · 民法典第1062条</td></tr>
+                    <tr style="background:#f8fafc;"><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q4</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">婚前财产混同 · 婚后财产认定规则</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1062、1063条</td></tr>
+                    <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q5</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">夫妻共同债务认定 · 共债共签 · 第1064条但书</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1064条 · 夫妻债务司法解释</td></tr>
+                    <tr style="background:#f8fafc;"><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q6</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">夫妻财产平等处理权 · 大额赠与 · 举证责任</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1057、1058条</td></tr>
+                    <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q7</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">遗嘱继承 · 夫妻个人财产认定 · 第1063条但书</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1063条 · 婚姻家庭编解释（一）第31条</td></tr>
+                    <tr style="background:#f8fafc;"><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q8</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">夫妻共同财产分割 · 贡献比例 · 过错相抵</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1087条 · 第1055条</td></tr>
+                    <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q9</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">婚后生产收益认定为共同财产 · 登记公示的效力</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1062条第2项</td></tr>
+                    <tr style="background:#f8fafc;"><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Q10</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">婚前财产约定对内效力 · 对外效力 · 债权人撤销权</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">民法典第1065条 · 第538条</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        本案例分析题基于真实生活场景改编，涉及民法典婚姻家庭编核心条文及司法解释<br>
+        适合法考备考 · 律师实务训练 · 法律硕士入学考试<br>
+        生成日期：2026年5月23日
+    </div>
+
+</div>
+</body>
+</html>
